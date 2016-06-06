@@ -46,10 +46,10 @@ namespace Karma
                 return;
             }
 
-            _q = new Spell.Skillshot(SpellSlot.Q, 950, SkillShotType.Linear, 250, 1500, 100);
+            _q = new Spell.Skillshot(SpellSlot.Q, 950, SkillShotType.Linear, 250, 1700, (int)60f);
             _w = new Spell.Targeted(SpellSlot.W, 675);
             _e = new Spell.Targeted(SpellSlot.E, 800);
-            _r = new Spell.Active(SpellSlot.R, 1100);
+            _r = new Spell.Active(SpellSlot.R);
 
             Menu = MainMenu.AddMenu("Karma", "Karma");
 
