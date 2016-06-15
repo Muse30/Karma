@@ -190,12 +190,12 @@ namespace Karma
 
         private static void Combo()
         {
-           var Target = TargetSelector.GetTarget(_q.Range, DamageType.Magical);
-            { 
+            var Target = TargetSelector.GetTarget(_q.Range, DamageType.Magical);
+            {
                 switch (getBoxItem(comboMenu, "MantraMode"))
                 {
                     case 0:
-                        if (_r.IsReady() && _q.IsReady())
+                        if (_r.IsReady() && _q.IsReady() && Target.Distance(Player) <= _q.Range + 50)
                         {
                             _r.Cast();
                             var predQ = _q.GetPrediction(Target);
@@ -218,7 +218,7 @@ namespace Karma
                         }
                         break;
                     case 1:
-                        if (_r.IsReady() && _w.IsReady())
+                        if (_r.IsReady() && _w.IsReady() && Target.Distance(Player) <= _q.Range + 50)
                         {
                             _r.Cast();
                         }
@@ -238,7 +238,7 @@ namespace Karma
                         }
                         break;
                     case 2:
-                        if (_r.IsReady() && _e.IsReady())
+                        if (_r.IsReady() && _e.IsReady() && Target.Distance(Player) <= _q.Range + 50)
                         {
                             _r.Cast();
 
