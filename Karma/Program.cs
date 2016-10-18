@@ -86,6 +86,7 @@ namespace Karma
             laneMenu.Add("laneq", new CheckBox("Use Q"));
             laneMenu.Add("lanemana", new Slider("Lane Mana % ", 50, 0, 100));
             laneMenu.Add("minq", new Slider("Min minions for Q ", 3, 1, 5));
+            laneMenu.Add("laneqh", new CheckBox("Use Q to Lasthit"));
 
 
             ksMenu = Menu.AddSubMenu("Killsteal", "Killsteal");
@@ -343,7 +344,7 @@ namespace Karma
 
             if (Player.ManaPercent >= getSliderItem(laneMenu, "lanemana"))
             {
-                if (_q.IsReady())
+                if (_q.IsReady() && getCheckBoxItem(laneMenu, "laneqh"))
                 {
                     _q.Cast(minions);
                 }
